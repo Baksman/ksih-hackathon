@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "289730061208",
+    "project_id": "hackathon-4d4ed",
+    "storage_bucket": "hackathon-4d4ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289730061208:android:92ce6c3558d0a59fae81ed",
+        "android_client_info": {
+          "package_name": "com.example.fintech_hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtyBgtb00WXyj6iFttKc5YcR7M1Ks7UGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289730061208-d2miq0h968cu9nd57nip8249n435v181.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "global.cheers.cheers"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289730061208:android:29baf63e1b1e2242ae81ed",
+        "android_client_info": {
+          "package_name": "com.example.new_hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtyBgtb00WXyj6iFttKc5YcR7M1Ks7UGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289730061208-d2miq0h968cu9nd57nip8249n435v181.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "global.cheers.cheers"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289730061208:android:759941915d9467d5ae81ed",
+        "android_client_info": {
+          "package_name": "global.cheers.celebrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289730061208-butin027oevp7pjdi28qnsge0mc88u7k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "global.cheers.celebrate",
+            "certificate_hash": "02ce6949ba1d8babc43d2442a222fd9158455b2f"
+          }
+        },
+        {
+          "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtyBgtb00WXyj6iFttKc5YcR7M1Ks7UGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289730061208-or8bn33uaqsl1ilt7d2r1t92p12s0pdk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289730061208-d2miq0h968cu9nd57nip8249n435v181.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "global.cheers.cheers"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
