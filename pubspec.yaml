@@ -49,19 +49,22 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
   share_plus: ^3.0.4
-  # firebase_auth: ^3.3.5
-  # firebase_core: ^1.11.0
-  # shimmer: ^2.0.0
-  # cached_network_image: ^2.3.3
-  # flutter_phone_direct_caller: ^2.0.0
-  # permission_handler: ^8.3.0
-  # url_launcher: ^6.0.18
-  # firebase_storage: ^10.2.5
-  # image_picker: ^0.8.4+4
+  charts_flutter: ^0.12.0
+  firebase_auth: ^3.3.5
+  provider: ^6.0.2
+  firebase_core: ^1.11.0
+  shimmer: ^2.0.0
+  cached_network_image: ^2.3.3
+  flutter_phone_direct_caller: ^2.0.0
+  permission_handler: ^8.3.0
+  url_launcher: ^6.0.18
+  get_it: ^7.2.0
+  firebase_storage: ^10.2.5
+  image_picker: ^0.8.4+4
   kt_drawer_menu: ^0.0.6
-  # flushbar: ^1.10.4
-  # email_validator: "^1.0.6"
-  # cloud_firestore: ^3.1.6
+  flushbar: ^1.10.4
+  email_validator: "^1.0.6"
+  cloud_firestore: ^3.1.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

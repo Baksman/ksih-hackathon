@@ -22,7 +22,7 @@ class StartScreen extends StatelessWidget {
                 top: 0,
                 child: Image.asset(
                   'assets/images/start_bubble.png',
-                  width: context.getDeviceWidth / 2.0,
+                  width: context.getDeviceWidth / 1.5,
                 ),
               ),
               Center(

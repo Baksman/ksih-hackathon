@@ -10,7 +10,7 @@ class CustomRaisedButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final bool isActive;
-   CustomRaisedButton(
+  const CustomRaisedButton(
       {this.color,
       this.textColor,
       required this.title,

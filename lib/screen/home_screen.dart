@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         leading: Builder(builder: (context) {
           return IconButton(
-            icon: Icon(
+            icon:const Icon(
               Icons.menu,
               color: ThemeColor.black,
             ),
@@ -31,10 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: ThemeColor.mintChiffon,
         elevation: 0,
       ),
-      drawer: Drawer(),
+      drawer:const Drawer(),
       body: ListView.separated(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          separatorBuilder: (ctx, idex) => Divider(
+          padding:const EdgeInsets.symmetric(horizontal: 10),
+          separatorBuilder: (ctx, idex) =>const Divider(
                 height: 1,
               ),
           itemCount: elections.length,
@@ -53,8 +53,8 @@ class ElectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      margin:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Row(
         children: [
           Container(
@@ -83,18 +83,18 @@ class ElectionItem extends StatelessWidget {
               20.verticalSpace,
               Row(
                 children: [
-                  Icon(
+             const     Icon(
                     Icons.thumb_up,
                     color: ThemeColor.black,
                   ),
-                  Spacer(),
-                  Icon(
+               const   Spacer(),
+                 const Icon(
                     Icons.chat_outlined,
                     color: ThemeColor.black,
                   ),
-                  Spacer(),
+                const  Spacer(),
                   IconButton(
-                      icon: Icon(
+                      icon:const Icon(
                         Icons.share,
                         color: ThemeColor.black,
                       ),
