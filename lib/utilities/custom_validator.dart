@@ -1,5 +1,3 @@
-import 'package:email_validator/email_validator.dart';
-
 class CustomValidator {
   String? _password;
   String? _email;
@@ -11,7 +9,8 @@ class CustomValidator {
 
   final usernameRegex = RegExp(r"^[A-Za-z0-9]+(?:[_-][A-Za-z0-9]+)*$",
       caseSensitive: false, multiLine: false);
-
+  final emailRegex = RegExp(
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
   final passwordRegex = RegExp(r"^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
   String? get email => _email;
   String? get password => _password;
@@ -21,8 +20,8 @@ class CustomValidator {
   String? get phoneNumber => _phoneNumber;
   String? get address => _address;
 
-  String? emailValidator(String email) {
-    if (EmailValidator.validate(email)) {
+  String? emailValidator(String? email) {
+    if (emailRegex.hasMatch(email ?? "")) {
       _email = email;
       return null;
     }
@@ -44,8 +43,8 @@ class CustomValidator {
     return null;
   }
 
-  String? passwordValidator(String password) {
-    if (password.trim().length < 8) {
+  String? passwordValidator(String? password) {
+    if (password!.trim().length < 8) {
       return "minimum of 8 characters";
     }
     _password = password;

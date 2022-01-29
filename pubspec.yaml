@@ -53,6 +53,7 @@ dev_dependencies:
   firebase_auth: ^3.3.5
   provider: ^6.0.2
   firebase_core: ^1.11.0
+  another_flushbar: ^1.10.28
   shimmer: ^2.0.0
   cached_network_image: ^2.3.3
   flutter_phone_direct_caller: ^2.0.0
@@ -63,7 +64,6 @@ dev_dependencies:
   image_picker: ^0.8.4+4
   kt_drawer_menu: ^0.0.6
   flushbar: ^1.10.4
-  email_validator: "^1.0.6"
   cloud_firestore: ^3.1.6
 
 # For information on the generic Dart part of this file, see the
