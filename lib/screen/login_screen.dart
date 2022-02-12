@@ -77,28 +77,28 @@ class _LoginScreenState extends State<LoginScreen> {
                                   return;
                                 }
                                 final result = await authVm.login(
-                                    "ibrahimehehe", 'jsjsjsjjsjs', context);
+                                    getIt.get<CustomValidator>().email ?? '',
+                                    getIt.get<CustomValidator>().password ?? '',
+                                    context);
                                 if (result) {
                                   _passwordController.clear();
-                                  Navigator.pushNamed(
+                                  Navigator.pushReplacementNamed(
                                       context, HomeScreen.routeName);
                                 } else {}
                               },
                               width: double.infinity,
                             ),
                       30.verticalSpace,
-                      authVm.isBusy
-                          ? const Offstage()
-                          : GestureDetector(
-                              onTap: () => Navigator.pushNamed(
-                                  context, SignupScreen.routeName),
-                              child: const Center(
-                                  child: Text(
-                                'Sign up',
-                                style: kt16White,
-                                textAlign: TextAlign.center,
-                              )),
-                            ),
+                      GestureDetector(
+                        onTap: () => Navigator.pushNamed(
+                            context, SignupScreen.routeName),
+                        child: const Center(
+                            child: Text(
+                          'Sign up',
+                          style: kt16White,
+                          textAlign: TextAlign.center,
+                        )),
+                      ),
                     ],
                   ),
                 ),

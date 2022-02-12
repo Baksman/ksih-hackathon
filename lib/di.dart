@@ -10,5 +10,5 @@ Future<void> setup() async {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   getIt.registerFactory(() => AuthService(firebaseAuth));
   getIt.registerFactory(() => AuthViewmodel(getIt()));
-  getIt.registerFactory(() => CustomValidator());
+  getIt.registerSingleton(CustomValidator());
 }

@@ -3,6 +3,8 @@ import 'package:new_hackathon/app_theme.dart/extension_utils.dart';
 import 'package:new_hackathon/app_theme.dart/text_theme.dart';
 import 'package:new_hackathon/app_theme.dart/them_colors.dart';
 import 'package:new_hackathon/model/election_model.dart';
+import 'package:new_hackathon/screen/graph_screen.dart';
+import 'package:new_hackathon/screen/login_screen.dart';
 import 'package:share_plus/share_plus.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         leading: Builder(builder: (context) {
           return IconButton(
-            icon:const Icon(
+            icon: const Icon(
               Icons.menu,
               color: ThemeColor.black,
             ),
@@ -31,17 +33,103 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: ThemeColor.mintChiffon,
         elevation: 0,
       ),
-      drawer:const Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            Container(
+              height: 180,
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.search,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Who is who',
+                style: kt14Blck,
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.all_out,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Campaigns',
+                style: kt14Blck,
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.privacy_tip,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Voters information',
+                style: kt14Blck,
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.account_circle,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Fund me',
+                style: kt14Blck,
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.account_box,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Fund some one',
+                style: kt14Blck,
+              ),
+            ),
+            const ListTile(
+              leading: Icon(
+                Icons.privacy_tip,
+                color: ThemeColor.black,
+              ),
+              title: Text(
+                'Voters information',
+                style: kt14Blck,
+              ),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+              },
+              leading: const Icon(
+                Icons.logout_outlined,
+                color: ThemeColor.black,
+              ),
+              title: const Text(
+                'Logout',
+                style: kt14Blck,
+              ),
+            ),
+          ],
+        ),
+      ),
       body: ListView.separated(
-          padding:const EdgeInsets.symmetric(horizontal: 10),
-          separatorBuilder: (ctx, idex) =>const Divider(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          separatorBuilder: (ctx, idex) => const Divider(
                 height: 1,
               ),
           itemCount: elections.length,
           itemBuilder: (ctx, index) {
-            return ElectionItem(elections[index]);
+            return GestureDetector(
+                behavior: HitTestBehavior.translucent,
+                onTap: () {
+                  Navigator.pushNamed(context, GraphScreen.routeName);
+                },
+                child: ElectionItem(elections[index]));
           }),
-    );
+  );
   }
 }
 
@@ -53,8 +141,8 @@ class ElectionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-      margin:const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Row(
         children: [
           Container(
@@ -83,25 +171,25 @@ class ElectionItem extends StatelessWidget {
               20.verticalSpace,
               Row(
                 children: [
-             const     Icon(
+                  const Icon(
                     Icons.thumb_up,
                     color: ThemeColor.black,
                   ),
-               const   Spacer(),
-                 const Icon(
+                  const Spacer(),
+                  const Icon(
                     Icons.chat_outlined,
                     color: ThemeColor.black,
                   ),
-                const  Spacer(),
+                  const Spacer(),
                   IconButton(
-                      icon:const Icon(
+                      icon: const Icon(
                         Icons.share,
                         color: ThemeColor.black,
                       ),
                       onPressed: () {
                         Share.share(
                           election.description,
-                          subject: 'Parrot Bo',
+                          subject: 'Parrot Box',
                         );
                       }),
                 ],

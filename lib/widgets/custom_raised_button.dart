@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:new_hackathon/app_theme.dart/them_colors.dart';
 
@@ -17,7 +16,9 @@ class CustomRaisedButton extends StatelessWidget {
       this.isLoading = false,
       this.isActive = true,
       this.width,
-      required this.onPressed});
+      required this.onPressed,
+      Key? key})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Center(

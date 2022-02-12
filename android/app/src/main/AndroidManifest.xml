@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.new_hackathon">
+    package="com.example.fintech_hackathon">
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="new_hackathon"
         android:name="${applicationName}"

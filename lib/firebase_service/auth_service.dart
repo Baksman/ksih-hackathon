@@ -15,18 +15,19 @@ class AuthService {
 
   Future<ApiResponse<UserModel>> signUp(String email, String password) async {
     try {
-      final result = await firebaseAuth.signInWithEmailAndPassword(
+      final result = await firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       return ApiResponse(data: UserModel.fromFirebaseUser(result.user!));
     } on FirebaseAuthException catch (e) {
+      // print('--------${e.code}----------');
       if (e.code == 'weak-password') {
         return ApiResponse(
           error: ServerFailure(error: 'The password provided is too weak.'),
         );
       } else if (e.code == 'email-already-in-use') {
         return ApiResponse(
-          error: ServerFailure(
-              error: 'The account already exists for that email.'),
+          error:
+              ServerFailure(error: 'An account already exists for that email.'),
         );
       }
       return ApiResponse(
@@ -44,6 +45,10 @@ class AuthService {
     return user != null;
   }
 
+  Stream<User?> get onAuthStateChanged {
+    return firebaseAuth.authStateChanges();
+  }
+
   Future<void> signout() async {
     await firebaseAuth.signOut();
   }
@@ -56,13 +61,14 @@ class AuthService {
 
       // return true;
     } on FirebaseAuthException catch (e) {
+  
       if (e.code == 'user-not-found') {
         return ApiResponse(
           error: ServerFailure(error: 'The password provided is too weak.'),
         );
       } else if (e.code == 'wrong-password') {
         return ApiResponse(
-          error: ServerFailure(error: 'The password provided is too weak.'),
+          error: ServerFailure(error: 'Wrong password'),
         );
       }
       return ApiResponse(

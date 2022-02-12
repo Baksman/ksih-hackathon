@@ -16,6 +16,7 @@ class NullFailure implements Failure {
 class ServerFailure implements Failure {
   final String error;
   ServerFailure({required this.error});
+  @override
   String toString() {
     return error;
   }

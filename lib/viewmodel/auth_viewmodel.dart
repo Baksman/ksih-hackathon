@@ -14,6 +14,7 @@ class AuthViewmodel extends BaseViewModel {
     setState(viewState: ViewState.busy);
     final result = await authService.login(email, password);
     setState(viewState: ViewState.done);
+
     if (result.hasError) {
       ShowFlushBar(
           subtitle: result.error.toString(), context: context, title: 'Error');
@@ -24,12 +25,19 @@ class AuthViewmodel extends BaseViewModel {
     // return result;
   }
 
-  Future<bool> signUp(String email, String password) async {
+  Future<bool> signUp(
+      String email, String password, BuildContext context) async {
     setState(viewState: ViewState.busy);
     final result = await authService.signUp(email, password);
-    await authService.sendVerification();
+    // todo add db service
+
     setState(viewState: ViewState.done);
-    if (result.hasError) {}
-    return false;
+    if (result.hasError) {
+      ShowFlushBar(
+          subtitle: result.error.toString(), context: context, title: 'Error');
+      return false;
+    }
+    authService.sendVerification();
+    return true;
   }
 }

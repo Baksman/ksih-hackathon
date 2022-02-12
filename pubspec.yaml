@@ -62,6 +62,7 @@ dev_dependencies:
   get_it: ^7.2.0
   firebase_storage: ^10.2.5
   image_picker: ^0.8.4+4
+  pie_chart: ^5.1.0
   kt_drawer_menu: ^0.0.6
   flushbar: ^1.10.4
   cloud_firestore: ^3.1.6

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_hackathon/screen/graph_screen.dart';
 import 'package:new_hackathon/screen/home_screen.dart';
 import 'package:new_hackathon/screen/login_screen.dart';
 import 'package:new_hackathon/screen/sign_up_screen.dart';
@@ -16,5 +17,8 @@ final Map<String, WidgetBuilder> routes = {
   },
   HomeScreen.routeName: (_) {
     return const HomeScreen();
+  },
+  GraphScreen.routeName: (_) {
+    return const GraphScreen();
   }
-}; 
+};

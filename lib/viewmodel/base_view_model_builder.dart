@@ -27,14 +27,15 @@ class _BaseViewBuilderState<T extends BaseViewModel>
   @override
   void initState() {
     if (widget.initState != null)
-      // SchedulerBinding.instance.addPostFrameCallback(
-      //   (_) =>
+    // SchedulerBinding.instance.addPostFrameCallback(
+    //   (_) =>
+    {
       widget.initState!(widget.model);
+    }
+
     // );
     super.initState();
   }
-
-
 
   @override
   dispose() {

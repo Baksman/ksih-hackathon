@@ -38,7 +38,7 @@ class StartScreen extends StatelessWidget {
                   child: Center(
                     child: GestureDetector(
                       onTap: () =>
-                          Navigator.pushNamed(context, LoginScreen.routeName),
+                          Navigator.pushReplacementNamed(context, LoginScreen.routeName),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 5, horizontal: 10),
