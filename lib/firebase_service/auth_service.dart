@@ -49,7 +49,7 @@ class AuthService {
     return firebaseAuth.authStateChanges();
   }
 
-  Future<void> signout() async {
+  Future<void> signOut() async {
     await firebaseAuth.signOut();
   }
 

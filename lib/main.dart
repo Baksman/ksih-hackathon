@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +16,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await setup();
-  runApp(const MyApp());
+  runZoned(() {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasError) {
                 return Text(snapshot.error.toString());
               }
-              if (!snapshot.hasData) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
                 return const LoadingScreen();
               } else {
                 return snapshot.data == null

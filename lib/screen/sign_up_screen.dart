@@ -9,7 +9,6 @@ import 'package:new_hackathon/utilities/custom_validator.dart';
 import 'package:new_hackathon/viewmodel/auth_viewmodel.dart';
 import 'package:new_hackathon/viewmodel/base_view_model_builder.dart';
 import 'package:new_hackathon/widgets/custom_raised_button.dart';
-
 import '../di.dart';
 
 class SignupScreen extends StatefulWidget {

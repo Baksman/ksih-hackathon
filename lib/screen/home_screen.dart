@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:new_hackathon/app_theme.dart/extension_utils.dart';
 import 'package:new_hackathon/app_theme.dart/text_theme.dart';
 import 'package:new_hackathon/app_theme.dart/them_colors.dart';
+import 'package:new_hackathon/firebase_service/auth_service.dart';
 import 'package:new_hackathon/model/election_model.dart';
 import 'package:new_hackathon/screen/graph_screen.dart';
 import 'package:new_hackathon/screen/login_screen.dart';
 import 'package:share_plus/share_plus.dart';
+
+import '../di.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = 'home_screen';
@@ -45,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ThemeColor.black,
               ),
               title: Text(
-                'Who is who',
+                'Budget Data',
                 style: kt14Blck,
               ),
             ),
@@ -55,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ThemeColor.black,
               ),
               title: Text(
-                'Campaigns',
+                'Analysis',
                 style: kt14Blck,
               ),
             ),
@@ -65,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ThemeColor.black,
               ),
               title: Text(
-                'Voters information',
+                'News feed',
                 style: kt14Blck,
               ),
             ),
@@ -75,32 +78,33 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: ThemeColor.black,
               ),
               title: Text(
-                'Fund me',
+                'Personal budget',
                 style: kt14Blck,
               ),
             ),
-            const ListTile(
-              leading: Icon(
-                Icons.account_box,
-                color: ThemeColor.black,
-              ),
-              title: Text(
-                'Fund some one',
-                style: kt14Blck,
-              ),
-            ),
-            const ListTile(
-              leading: Icon(
-                Icons.privacy_tip,
-                color: ThemeColor.black,
-              ),
-              title: Text(
-                'Voters information',
-                style: kt14Blck,
-              ),
-            ),
+            // const ListTile(
+            //   leading: Icon(
+            //     Icons.account_box,
+            //     color: ThemeColor.black,
+            //   ),
+            //   title: Text(
+            //     'Fund some one',
+            //     style: kt14Blck,
+            //   ),
+            // ),
+            // const ListTile(
+            //   leading: Icon(
+            //     Icons.privacy_tip,
+            //     color: ThemeColor.black,
+            //   ),
+            //   title: Text(
+            //     'Voters information',
+            //     style: kt14Blck,
+            //   ),
+            // ),
             ListTile(
               onTap: () {
+                getIt.get<AuthService>().signOut();
                 Navigator.pushReplacementNamed(context, LoginScreen.routeName);
               },
               leading: const Icon(
@@ -129,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: ElectionItem(elections[index]));
           }),
-  );
+    );
   }
 }
 
